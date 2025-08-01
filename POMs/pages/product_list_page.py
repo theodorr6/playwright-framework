@@ -13,10 +13,8 @@ class ComponentsPage(BasePage):
 
 
     TITLE = "//h1[text()='{}']"
-    SORT_BY_DROPDOWN = "//div[@id='entry_212397']"
-    SORT_BY_OPTION = "//div[@id='entry_212403']//option[text()='{}']"
+    SORT_BY_DROPDOWN = "//select[@id='input-sort-212403']"
     SHOW_PER_PAGE_DROPDOWN = "//div[@id='entry_212402']//select"
-    ITEMS_PER_PAGE = "//div[@id='entry_212402']//option[text()='{}']"
     TOTAL_NUMBER_OF_ITEMS = "//div[@id='entry_212412']//div[contains(text(),'{}')]"
     PRICE_ALL_PRODUCTS_ON_PAGE = "//div[@id='entry_212408']//div[@class='price']//span"
 
@@ -35,12 +33,14 @@ class ComponentsPage(BasePage):
     def select_items_per_page(self, no_of_items):
         """Select the number of items to show per page"""
         if no_of_items not in [15, 25, 50, 75, 100]:
-            self.logger("Number of items per page can only be 15, 25, 50, 75 or 100!")
-        self.click_element(self.ITEMS_PER_PAGE.format(no_of_items))
+            self.logger.info("Number of items per page can only be 15, 25, 50, 75 or 100!")
+        self.page.select_option(self.SHOW_PER_PAGE_DROPDOWN, label=no_of_items)
 
     def select_high_to_low(self):
         """Sort products by High to Low prices"""
-        self.click_element(self.SORT_BY_OPTION.format(SortByEnum.PRICE_HIGH_LOW))
+        locator = self.SORT_BY_DROPDOWN.format(SortByEnum.PRICE_HIGH_LOW.value)
+        self.page.select_option(locator, label=SortByEnum.PRICE_HIGH_LOW.value)
+        self.page.keyboard.press("Escape")
 
     def get_total_items(self, category):
         """Get total number of items in category"""
@@ -55,7 +55,8 @@ class ComponentsPage(BasePage):
 
         for element in price_elements:
             price_text = element.text_content()
-            price = re.findall(r'\d+\.?\d*', price_text)
+            cleaned_text = price_text.replace(',', '').replace('$', '')
+            price = re.findall(r'\d+\.?\d*', cleaned_text)
             if price:
                 prices.append(float(price[0]))
 

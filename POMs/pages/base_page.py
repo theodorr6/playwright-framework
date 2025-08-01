@@ -31,3 +31,4 @@ class BasePage:
     def get_text(self, selector: str, timeout= 5000):
         """Get text for from element"""
         return self.page.locator(selector).text_content(timeout= timeout)
+

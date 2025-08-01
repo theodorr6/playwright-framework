@@ -1,5 +1,5 @@
 from POMs.modals.categories import CategoriesModal
-from base_page import BasePage
+from POMs.pages.base_page import BasePage
 
 class HomePage(BasePage):
     """Home page object model"""
@@ -14,4 +14,4 @@ class HomePage(BasePage):
     def open_category_modal(self):
         """Open Select by category modal"""
         self.click_element(self.SELECT_CATEGORY_BUTTON)
-        return CategoriesModal
+        return CategoriesModal(self.page)

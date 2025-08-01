@@ -27,7 +27,7 @@ class SortByEnum(Enum):
     NEWEST = "Newest"
     NAME_A_Z = "Name (A - Z)"
     NAME_Z_A = "Name (Z - A)"
-    PRICE_LOW_HIGH = "Price (Low > High"
+    PRICE_LOW_HIGH = "Price (Low > High)"
     PRICE_HIGH_LOW = "Price (High > Low)"
     RATING_HIGHEST = "Rating (Highest)"
     RATING_LOWEST = "Rating (Lowest)"
