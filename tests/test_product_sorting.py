@@ -5,10 +5,10 @@ from enums import CategoriesEnum
 pytestmark = [pytest.mark.product_sorting]
 
 @pytest.fixture()
-def high_to_low_test_setup(browser_page, base_url, components_page, categories_modal, select_number_items_per_page, go_to_category, _sort_products_descendant_price):
+def high_to_low_test_setup(page, base_url, components_page, categories_modal, select_number_items_per_page, go_to_category, _sort_products_descendant_price):
     category = CategoriesEnum.COMPONENTS.value
 
-    browser_page.goto(base_url)
+    page.goto(base_url)
     go_to_category(category)
     select_number_items_per_page(category)
 

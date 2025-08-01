@@ -6,14 +6,14 @@ from POMs.pages.product_list_page import ComponentsPage
 
 
 @pytest.fixture()
-def components_page(browser_page):
+def components_page(page):
     """ComponentsPage fixture"""
-    return ComponentsPage(browser_page)
+    return ComponentsPage(page)
 
 @pytest.fixture()
-def categories_modal(browser_page):
+def categories_modal(page):
     """HomePage fixture"""
-    return CategoriesModal(browser_page)
+    return CategoriesModal(page)
 
 @pytest.fixture()
 def select_number_items_per_page(components_page):
