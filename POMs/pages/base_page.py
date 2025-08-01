@@ -1,3 +1,5 @@
+import logging
+
 from playwright.sync_api import Page, expect
 
 class BasePage:
@@ -6,6 +8,7 @@ class BasePage:
     def __init__(self, page: Page, base_url: str = ""):
         self.page = page
         self.base_url = base_url
+        self.logger = logging.getLogger()
 
     def navigate_to(self, url):
         """Navigate to specified URL or base URL"""

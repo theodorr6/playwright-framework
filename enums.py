@@ -20,7 +20,7 @@ class CategoriesEnum(Enum):
     WEB_CAMERAS = "Web Cameras"
 
 
-class SortBy(Enum):
+class SortByEnum(Enum):
     DEFAULT = "Default"
     BEST_SELLERS = "Best Sellers"
     POPULAR = "Popular"
