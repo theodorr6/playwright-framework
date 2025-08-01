@@ -7,9 +7,9 @@ def browser_setup():
     """Setup browser instance for the entire test session"""
     with sync_playwright() as playwright:
         if BrowserConfig.BROWSER.lower() == "firefox":
-            browser = playwright.firefox.launch(headless=BrowserConfig.HEADLESS)
+            browser = playwright.firefox.launch(headless=BrowserConfig.HEADLESS, slow_mo=BrowserConfig.SLOW_MO)
         else:
-            browser = playwright.chromium.launch(headless=BrowserConfig.HEADLESS)
+            browser = playwright.chromium.launch(headless=BrowserConfig.HEADLESS, slow_mo=BrowserConfig.SLOW_MO)
         yield browser
         browser.close()
 
