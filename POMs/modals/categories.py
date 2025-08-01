@@ -1,5 +1,6 @@
 from POMs.pages.base_page import BasePage
 
+
 class CategoriesModal(BasePage):
     """Categories modal object"""
 

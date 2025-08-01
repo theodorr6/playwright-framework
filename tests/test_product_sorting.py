@@ -4,6 +4,7 @@ from enums import CategoriesEnum
 
 pytestmark = [pytest.mark.product_sorting]
 
+
 @pytest.fixture()
 def high_to_low_test_setup(page, base_url, components_page, select_number_items_per_page, go_to_category, _sort_products_descendant_price):
     category = CategoriesEnum.COMPONENTS.value
@@ -14,6 +15,7 @@ def high_to_low_test_setup(page, base_url, components_page, select_number_items_
     _sort_products_descendant_price()
 
     return components_page
+
 
 def test_high_to_low(high_to_low_test_setup):
     """Verify that products are sorted by highest to lowest price"""

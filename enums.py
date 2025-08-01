@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class CategoriesEnum(Enum):
     """Enum class for all categories"""
     COMPONENTS = "Components"
@@ -32,4 +33,4 @@ class SortByEnum(Enum):
     RATING_HIGHEST = "Rating (Highest)"
     RATING_LOWEST = "Rating (Lowest)"
     MODEL_A_Z = "Model (A - Z)"
-    MODEL_Z_A ="Model (Z - A)"
+    MODEL_Z_A = "Model (Z - A)"

@@ -11,7 +11,6 @@ class ComponentsPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
 
-
     TITLE = "//h1[text()='{}']"
     SORT_BY_DROPDOWN = "//select[@id='input-sort-212403']"
     SHOW_PER_PAGE_DROPDOWN = "//div[@id='entry_212402']//select"

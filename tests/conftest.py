@@ -9,6 +9,7 @@ def components_page(page):
     """ComponentsPage fixture"""
     return ComponentsPage(page)
 
+
 @pytest.fixture()
 def home_page(page):
     """HomePage fixture"""
@@ -24,6 +25,7 @@ def select_number_items_per_page(components_page):
         components_page.select_items_per_page(max_items)
     return _select_items_per_page
 
+
 @pytest.fixture()
 def _sort_products_descendant_price(components_page):
     """Sort products by highest to lowest price and return the page"""
@@ -31,6 +33,7 @@ def _sort_products_descendant_price(components_page):
         components_page.open_sort_by_dropdown()
         components_page.select_high_to_low()
     return do_sorting
+
 
 @pytest.fixture()
 def go_to_category(home_page):
