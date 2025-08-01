@@ -1,6 +1,6 @@
 class BrowserConfig:
     """Browser configuration settings"""
-    BROWSER = "chromium"
+    BROWSER = "firefox"
     HEADLESS = False
     SLOW_MO = 500
 
