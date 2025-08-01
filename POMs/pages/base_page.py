@@ -18,13 +18,13 @@ class BasePage:
         return self.page.wait_for_selector(selector, state="visible", timeout=timeout)
 
     def click_element(self, selector: str, timeout= 5000):
-        """Click element with auto-wait for actionability"""
-        self.page.locator(selector).click(timeout=timeout)
+        """Click element for actionability"""
+        self.page.locator(selector).click(timeout= timeout)
 
     def fill_text(self, selector: str, text: str, timeout= 5000):
-        """Fill text with auto-wait"""
-        self.page.locator(selector).fill(text, timeout=timeout)
+        """Type text in input fields"""
+        self.page.locator(selector).fill(text, timeout= timeout)
 
     def get_text(self, selector: str, timeout= 5000):
-        """Get text with auto-wait for visibility"""
-        return self.page.locator(selector).text_content(timeout=timeout)
+        """Get text for from element"""
+        return self.page.locator(selector).text_content(timeout= timeout)

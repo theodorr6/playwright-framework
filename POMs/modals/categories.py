@@ -3,8 +3,8 @@ from POMs.pages.base_page import BasePage
 class CategoriesModal(BasePage):
     """Categories modal object"""
 
-    def __init__(self, page, base_url):
-        super().__init__(page, base_url)
+    def __init__(self, page):
+        super().__init__(page)
 
     CATEGORY = "//div[contains(@class,'drawer')]//span[normalize-space(text())='{}']"
 
