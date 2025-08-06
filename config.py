@@ -1,5 +1,6 @@
 import os
 
+
 class BrowserConfig:
     """Browser configuration settings"""
     BROWSER = "chromium"
